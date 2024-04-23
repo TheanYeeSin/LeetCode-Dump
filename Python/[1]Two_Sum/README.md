@@ -33,6 +33,6 @@ Constraints:
 
 # Solution
 
-[Two_Sum](1.Two_Sum.py)
+[Two_Sum]([1]Two_Sum.py)
     
     

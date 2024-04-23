@@ -4,15 +4,17 @@ import sys
 
 def generate_files(id: int, name: str):
 
+    # CREATE PYTHON FOLDER IF NOT EXIST
     if not os.path.exists("Python"):
         os.makedirs("Python")
 
-    folder_path = os.path.join("Python", f"{id}.{name}")
+    # CREATE NEW LEETCODE FOLDER IF NOT EXIST
+    folder_path = os.path.join("Python", f"[{id}]{name}")
     if not os.path.exists(folder_path):
         os.makedirs(folder_path)
 
     # CREATE PYTHON FILE
-    python_file = os.path.join(folder_path, f"{id}.{name}.py")
+    python_file = os.path.join(folder_path, f"[{id}]{name}.py")
     with open(python_file, "w") as file:
         file.write("# Your Python code goes here.")
 
@@ -29,7 +31,7 @@ Difficulty: [EDIT HERE]
 
 # Solution
 
-[{name}]({id}.{name}.py)
+[{name}]([{id}]{name}.py)
     
     """
     with open(readme_file, "w") as file:
