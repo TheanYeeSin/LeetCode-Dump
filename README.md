@@ -2,19 +2,31 @@
 
 A repository that stores all my LeetCode code.
 
-# Language Used
+## Installation
+
+```
+git clone
+```
+
+### To create new folder
+
+```
+python generate_leetcode_folder.py <id> <name>
+```
+
+## Language Used
 
 - Python
 
-# Purpose
+## Purpose
 
 Mainly to document my LeetCode solution.
 
-# Background
+## Background
 
 In 2023, after my final university exams, I took on the challenge of daily LeetCode sessions until I landed a job. A month later, thanks in part to my practice, I secured employment. Deciding to maintain the momentum, I continued my LeetCode routine but not daily anymore due to other commitment.
 
-# Remarks
+## Remarks
 
 My code may not be the best practice, so take it with a grain of salt. Also, I might miss a day due to forgetful nature. Thank you.
 
