@@ -11,7 +11,7 @@ git clone
 ### To create new folder
 
 ```
-python generate_leetcode_folder.py <id> <name>
+python generate_leetcode_folder.py <id> <name> <language:int> (Check python file for more info)
 ```
 
 ## Language Used

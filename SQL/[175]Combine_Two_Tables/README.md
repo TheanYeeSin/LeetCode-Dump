@@ -70,6 +70,6 @@ addressId = 1 contains information about the address of personId = 2.
 
 # Solution
 
-[Combine_Two_Tables]([175]Combine_Two_Tables.py)
+[Combine_Two_Tables]([175]Combine_Two_Tables.txt)
     
     

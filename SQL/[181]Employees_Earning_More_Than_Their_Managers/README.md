@@ -46,6 +46,6 @@ Explanation: Joe is the only employee who earns more than his manager.
 
 # Solution
 
-[Employees_Earning_More_Than_Their_Managers]([181]Employees_Earning_More_Than_Their_Managers.py)
+[Employees_Earning_More_Than_Their_Managers]([181]Employees_Earning_More_Than_Their_Managers.txt)
     
     

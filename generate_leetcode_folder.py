@@ -2,21 +2,42 @@ import os
 import sys
 
 
-def generate_files(id: int, name: str):
+language_dict = {1: "Python", 2: "SQL"}
+
+
+def generate_files(id: int, name: str, language: int):
+
+    selected_language = language_dict.get(language, None)
+    file_type = ""
+
+    if selected_language is None:
+        print("Unknown Language")
+        return
 
     # CREATE PYTHON FOLDER IF NOT EXIST
-    if not os.path.exists("Python"):
-        os.makedirs("Python")
+    if not os.path.exists(selected_language):
+        os.makedirs(selected_language)
 
     # CREATE NEW LEETCODE FOLDER IF NOT EXIST
-    folder_path = os.path.join("Python", f"[{id}]{name}")
+    folder_path = os.path.join(selected_language, f"[{id}]{name}")
     if not os.path.exists(folder_path):
         os.makedirs(folder_path)
 
-    # CREATE PYTHON FILE
-    python_file = os.path.join(folder_path, f"[{id}]{name}.py")
-    with open(python_file, "w") as file:
-        file.write("# Your Python code goes here.")
+    if language == 1 and selected_language == "Python":
+
+        # CREATE PYTHON FILE
+        file_type = ".py"
+        python_file = os.path.join(folder_path, f"[{id}]{name}{file_type}")
+        with open(python_file, "w") as file:
+            file.write("# Your Python code goes here.")
+
+    elif language == 2 and selected_language == "SQL":
+
+        # CREATE TEXT FILE
+        file_type = ".txt"
+        python_file = os.path.join(folder_path, f"[{id}]{name}{file_type}")
+        with open(python_file, "w") as file:
+            file.write("# Your code goes here.")
 
     # CREATE README.MD FILE
     readme_file = os.path.join(folder_path, "README.md")
@@ -31,8 +52,8 @@ Difficulty: [EDIT HERE]
 
 # Solution
 
-[{name}]([{id}]{name}.py)
-    
+[{name}]([{id}]{name}{file_type})
+
     """
     with open(readme_file, "w") as file:
         file.write(readme_content)
@@ -41,10 +62,11 @@ Difficulty: [EDIT HERE]
 
 
 if __name__ == "__main__":
-    if len(sys.argv) != 3:
-        print("Usage: python generate_leetcode_folder.py <id> <name>")
+    if len(sys.argv) != 4:
+        print("Usage: python generate_leetcode_folder.py <id> <name> <language>")
         sys.exit(1)
 
     id = sys.argv[1]
     name = sys.argv[2]
-    generate_files(id, name)
+    language = int(sys.argv[3])
+    generate_files(id, name, language)
