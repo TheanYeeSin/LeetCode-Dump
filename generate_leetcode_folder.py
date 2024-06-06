@@ -2,13 +2,14 @@ import os
 import sys
 
 
-language_dict = {1: "Python", 2: "SQL"}
+language_dict = {1: "Python", 2: "SQL", 3: "Bash"}
 
 
 def generate_files(id: int, name: str, language: int):
 
     selected_language = language_dict.get(language, None)
     file_type = ""
+    code_file = ""
 
     if selected_language is None:
         print("Unknown Language")
@@ -27,16 +28,24 @@ def generate_files(id: int, name: str, language: int):
 
         # CREATE PYTHON FILE
         file_type = ".py"
-        python_file = os.path.join(folder_path, f"[{id}]{name}{file_type}")
-        with open(python_file, "w") as file:
+        code_file = os.path.join(folder_path, f"[{id}]{name}{file_type}")
+        with open(code_file, "w") as file:
             file.write("# Your Python code goes here.")
 
     elif language == 2 and selected_language == "SQL":
 
         # CREATE TEXT FILE
         file_type = ".txt"
-        python_file = os.path.join(folder_path, f"[{id}]{name}{file_type}")
-        with open(python_file, "w") as file:
+        code_file = os.path.join(folder_path, f"[{id}]{name}{file_type}")
+        with open(code_file, "w") as file:
+            file.write("# Your code goes here.")
+
+    elif language == 3 and selected_language == "Bash":
+
+        # CREATE TEXT FILE
+        file_type = ".txt"
+        code_file = os.path.join(folder_path, f"[{id}]{name}{file_type}")
+        with open(code_file, "w") as file:
             file.write("# Your code goes here.")
 
     # CREATE README.MD FILE
@@ -58,7 +67,7 @@ Difficulty: [EDIT HERE]
     with open(readme_file, "w") as file:
         file.write(readme_content)
 
-    print(f"Files '{python_file}' and '{readme_file}' generated successfully.")
+    print(f"Files '{code_file}' and '{readme_file}' generated successfully.")
 
 
 if __name__ == "__main__":
