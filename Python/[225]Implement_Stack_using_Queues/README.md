@@ -1,7 +1,7 @@
 
 # Implement_Stack_using_Queues
 
-Difficulty: [EDIT HERE]
+Difficulty: Easy
 
 # Question Description
 
