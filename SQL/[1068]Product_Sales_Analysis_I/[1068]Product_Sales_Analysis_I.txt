@@ -1,4 +1,3 @@
-# Your code goes here.
 # Write your MySQL query statement below
 SELECT 
     p.product_name, 
